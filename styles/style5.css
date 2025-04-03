@@ -136,6 +136,7 @@ header {
     font-size: 3rem;
     font-weight: bold;
     color: #ff4444;
+    margin-bottom: 0px;
     text-shadow: 0 0 15px #ff0000, 0 0 30px #ff2222, 0 0 45px #ff4444;
     animation: neonPulse 2s infinite alternate ease-in-out;
 }
