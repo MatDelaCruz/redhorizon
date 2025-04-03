@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REDHorizon</title>
+    <link rel="stylesheet" href="styles/style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("show");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="navbar-container">
+            <div class="logo-section">
+                <a href="index.html">
+                    <div class="hexagon-logo">
+                        <img src="images/RLogo.png" alt="Red Horizon Security Logo">
+                    </div>
+                    <span class="brand-name">REDHorizon</span>
+                </a>
+            </div>
+            <nav id="menu" class="menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="expertise.html">Our Expertise</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to REDHorizon Security Consultant Services</h1>
+                <p>Providing expert security consulting and VAPT services to protect your business.</p>
+                <div class="footer-icons">
+                    <i class="fas fa-shield-alt"></i>
+                    <i class="fas fa-user-shield"></i>
+                    <i class="fas fa-bug"></i>
+                </div>  
+            </div>
+        </section>      
+    </main>
+    <footer>
+        <p>&copy; 2025 Security Consultant Services. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

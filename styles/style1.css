@@ -1,0 +1,211 @@
+/* Global Styling */
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0f172a;
+    color: #fff;
+    line-height: 1.6;
+    background-image: radial-gradient(circle, rgba(255, 0, 0, 0.3) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: fadeInBg 1s ease-in-out;
+}
+
+@keyframes fadeInBg {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Security Icons in Footer */
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 30px 0;
+}
+
+.footer-icons i {
+    font-size: 5rem;
+    color: #ff4444;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-icons i:hover {
+    transform: scale(1.5);
+    color: #fff;
+}
+
+/* Navbar Styling */
+header {
+    background-color: #0f172a;
+    padding: 15px 8%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-section a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hexagon-logo {
+    width: 50px;
+    height: 50px;
+    
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hexagon-logo img {
+    width: 120%;
+    object-fit: contain;
+}
+
+.brand-name {
+    color: #ff4444;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #ff4444;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        background-color: #1e293b;
+        width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        padding: 10px 0;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu a {
+        padding: 12px;
+        text-align: center;
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 20px;
+    margin-top: 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #ff4444;
+    text-shadow: 0 0 15px #ff0000, 0 0 30px #ff2222, 0 0 45px #ff4444;
+    animation: neonPulse 1.5s infinite alternate;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-top: 12px;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes neonPulse {
+    0% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff2222, 0 0 30px #ff4444; }
+    50% { text-shadow: 0 0 20px #ff0000, 0 0 40px #ff2222, 0 0 60px #ff4444; }
+    100% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff2222, 0 0 30px #ff4444; }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: #0f172a;
+    color: white;
+    font-size: 0.9rem;
+}
