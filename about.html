@@ -24,6 +24,7 @@
                 <a href="expertise.html">Our Expertise</a>
                 <a href="contact.html">Contact Us</a>
             </nav>
+            <div class="menu-icon" onclick="toggleMenu()" aria-label="Toggle Navigation">&#9776;</div>
         </div>
     </header>
     <main>
@@ -45,5 +46,10 @@
     <footer>
         <p>&copy; 2025 Security Consultant Services. All Rights Reserved.</p>
     </footer>
+    <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("show");
+        }
+    </script>
 </body>
 </html>
