@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - REDHorizon</title>
     <link rel="stylesheet" href="styles/style2.css">
+    <script>
+        // Function to toggle the visibility of the menu on small screens
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -47,9 +54,10 @@
         <p>&copy; 2025 Security Consultant Services. All Rights Reserved.</p>
     </footer>
     <script>
-        function toggleMenu() {
-            document.getElementById("menu").classList.toggle("show");
-        }
+        // Disable right-click
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
     </script>
 </body>
 </html>

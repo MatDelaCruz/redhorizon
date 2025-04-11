@@ -9,6 +9,10 @@ body {
     background-image: radial-gradient(circle, rgba(255, 0, 0, 0.3) 1px, transparent 1px);
     background-size: 20px 20px;
     animation: fadeInBg 1.5s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE/Edge */
 }
 
 @keyframes fadeInBg {
