@@ -1,4 +1,3 @@
-/* Global Reset */
 html {
     font-size: 16px;
     scroll-behavior: smooth;
@@ -10,7 +9,6 @@ html {
     transition: all 0.25s ease-in-out;
 }
 
-/* Global Styles */
 body {
     font-family: 'Inter', Arial, sans-serif;
     margin: 0;
@@ -32,7 +30,6 @@ body {
     to { opacity: 1; }
 }
 
-/* Navbar */
 header {
     background-color: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(10px);
@@ -162,7 +159,6 @@ header {
     100% { text-shadow: 0 0 5px #ff0000, 0 0 10px #ff2222, 0 0 20px #ff4444; }
 }
 
-/* Contact Hero */
 .contact-hero {
     display: flex;
     justify-content: center;
@@ -191,7 +187,6 @@ header {
     margin: auto;
 }
 
-/* Contact Section */
 .contact-section {
     display: flex;
     justify-content: center;
@@ -241,19 +236,22 @@ header {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
+    word-break: break-word;
   }
   
   .contact-table td {
-    padding: 12px;
+    padding: 8px; /* Reduced padding */
     border: 1px solid #ff4444;
     color: #cbd5e1;
-    word-break: break-word;
-    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    font-size: clamp(0.6rem, 1vw, 0.85rem); /* Even smaller text */
     vertical-align: top;
-    
+    text-align: left;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
   }
   
-  /* Optional: Set column widths */
   .contact-table td:first-child {
     width: 30%;
     font-weight: bold;
@@ -262,26 +260,30 @@ header {
   
   .contact-table td:last-child {
     width: 70%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
   }
   
-.contact-table td {
-    padding: 12px;
-    border: 1px solid #ff4444;
-    color: #cbd5e1;
-}
-
-.contact-table td a {
+  /* Links: responsive and wrap-friendly */
+  .contact-table td a {
     color: #ff4444;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
-}
+    display: inline-block;
+    font-size: inherit;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  
 
 .contact-table td a:hover {
     color: #ffffff;
 }
 
-
-/* Social Media Links styling */
 .contact-info p a {
     color: #ff4444;
     text-decoration: none;
@@ -292,7 +294,6 @@ header {
     color: #ffffff;
 }
 
-/* Social Media Icons */
 .contact-info .social-media-links {
     display: flex;
     gap: 20px;
@@ -315,7 +316,6 @@ header {
     color: inherit;
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 40px;
@@ -336,8 +336,6 @@ from { opacity: 0; transform: translateY(20px); }
 to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive Design */
-/* Hamburger Icon */
 .menu-toggle {
     display: none;
     color: white;
@@ -345,7 +343,6 @@ to { opacity: 1; transform: translateY(0); }
     cursor: pointer;
 }
 
-/* Mobile Menu Behavior */
 @media (max-width: 1024px) {
     .hexagon-logo {
         width: 7vw;

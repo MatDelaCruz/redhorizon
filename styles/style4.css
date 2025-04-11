@@ -1,4 +1,3 @@
-/* Global Reset */
 html {
     font-size: 16px;
     scroll-behavior: smooth;
@@ -31,7 +30,6 @@ body {
     to { opacity: 1; }
 }
 
-/* Navbar Styling */
 header {
     background-color: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(10px);
@@ -147,7 +145,6 @@ header {
     cursor: pointer;
 }
 
-/* Hero Section */
 .hero {
     display: flex;
     justify-content: center;
@@ -225,7 +222,6 @@ header {
     line-height: 1.5;
 }
 
-/* Footer */
 footer {
     text-align: center;
     body {
@@ -246,7 +242,6 @@ footer {
         to { opacity: 1; }
     }
     
-    /* Navbar Styling */
     header {
         background-color: #0f172a;
         padding: 15px 8%;
@@ -299,8 +294,7 @@ footer {
     .menu a:hover {
         transform: scale(1.1);
     }
-    
-    /* Hero Section */
+  
     .hero {
         display: flex;
         justify-content: center;
@@ -319,8 +313,7 @@ footer {
         text-shadow: 0 0 15px #ff0000, 0 0 30px #ff2222, 0 0 45px #ff4444;
         animation: neonPulse 2s infinite alternate ease-in-out;
     }
-    
-    /* Services Section */
+
     .services-section {
         padding: 60px 10%;
         display: flex;
@@ -363,8 +356,7 @@ footer {
         transform: translateX(5px);
         background: rgba(255, 255, 255, 0.1);
     }
-    
-    /* Centering "Red Team Assessments" */
+
     .services-container ul li:last-child {
         align-self: center;
         text-align: center;
@@ -373,8 +365,7 @@ footer {
         justify-content: center;
         font-weight: bold;
     }
-    
-    /* Footer */
+
     footer {
         text-align: center;
         padding: 40px;
@@ -394,9 +385,7 @@ footer {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
     }
-    
-    /* Responsive Design */
-    /* Hamburger Icon */
+
 .menu-toggle {
     display: none;
     color: white;
@@ -404,7 +393,6 @@ footer {
     cursor: pointer;
 }
 
-/* Mobile Menu Behavior */
 @media (max-width: 1024px) {
     .hexagon-logo {
         width: 7vw;
