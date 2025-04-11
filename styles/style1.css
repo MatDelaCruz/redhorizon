@@ -1,3 +1,15 @@
+/* Global Reset */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Base Styling */
 body {
     font-family: 'Inter', Arial, sans-serif;
     margin: 0;
@@ -8,9 +20,7 @@ body {
     background-image: radial-gradient(circle, rgba(255, 0, 0, 0.3) 1px, transparent 1px);
     background-size: 20px 20px;
     animation: fadeInBg 1s ease-in-out;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
+    padding-top: 100px; /* to prevent content from hiding under fixed header */
 }
 
 @keyframes fadeInBg {
@@ -18,6 +28,7 @@ body {
     to { opacity: 1; }
 }
 
+/* Header/Nav */
 header {
     background-color: #0f172a;
     padding: 15px 5%;
@@ -111,79 +122,11 @@ header {
     font-size: 28px;
     cursor: pointer;
     color: white;
+    position: absolute;
+    right: 20px; /* Positioning the hamburger menu on the right side */
 }
 
-@media (max-width: 1024px) {
-    .logo-section a {
-        font-size: 1.4rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 10px;
-        background-color: #1e293b;
-        width: 200px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        padding: 10px 0;
-        z-index: 1001;
-    }
-
-    .menu.show {
-        display: flex;
-    }
-
-    .menu a {
-        padding: 12px;
-        text-align: center;
-        display: block;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .menu-icon {
-        display: block;
-        position: absolute;
-        left: 20px;
-        font-size: 30px;
-    }
-
-    .navbar-container {
-        flex-direction: column;
-    }
-
-    /* Ensure hamburger menu stays visible even when zoomed */
-    header {
-        padding: 15px 8%;
-    }
-
-    .logo-section {
-        gap: 8px;
-    }
-
-    .hexagon-logo {
-        width: 8vw;
-        height: 8vw;
-    }
-
-    .brand-name {
-        font-size: 1.6rem;
-    }
-
-    .menu a {
-        font-size: 1.2rem;
-        padding: 15px;
-    }
-
-    .menu-icon {
-        font-size: 30px;
-    }
-}
-
+/* Hero Section */
 .hero {
     display: flex;
     justify-content: center;
@@ -225,63 +168,7 @@ header {
     100% { text-shadow: 0 0 10px #ff0000, 0 0 20px #ff2222, 0 0 30px #ff4444; }
 }
 
-.redhorizon-edr {
-    background-color: #1e293b;
-    padding: 80px 5%;
-    text-align: center;
-}
-
-.redhorizon-edr h2 {
-    font-size: 2.5rem;
-    color: #ff4444;
-    margin-bottom: 20px;
-}
-
-.redhorizon-edr p {
-    font-size: 1.2rem;
-    color: #cbd5e1;
-    margin-bottom: 40px;
-}
-
-.edr-features {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.feature-box {
-    background-color: #2d3a52;
-    padding: 20px;
-    border-radius: 8px;
-    width: 20vw;
-    min-width: 250px;
-    text-align: center;
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.feature-box i {
-    font-size: 3rem;
-    color: #ff4444;
-}
-
-.feature-box h3 {
-    font-size: 1.5rem;
-    color: #ff4444;
-    margin: 15px 0;
-}
-
-.feature-box p {
-    font-size: 1rem;
-    color: #cbd5e1;
-}
-
-.feature-box:hover {
-    transform: scale(1.05);
-}
-
+/* Why Choose Us Section */
 .why-choose-us {
     padding: 60px 5%;
     background-color: #1e293b;
@@ -354,18 +241,65 @@ header {
     top: 2px;
 }
 
-@media (max-width: 768px) {
-    .choose-us-box {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    .choose-us-grid {
-        flex-direction: column;
-        align-items: center;
-    }
+/* EDR Section */
+.redhorizon-edr {
+    background-color: #1e293b;
+    padding: 80px 5%;
+    text-align: center;
 }
 
+.redhorizon-edr h2 {
+    font-size: 2.5rem;
+    color: #ff4444;
+    margin-bottom: 20px;
+}
+
+.redhorizon-edr p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 40px;
+}
+
+.edr-features {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.feature-box {
+    background-color: #2d3a52;
+    padding: 20px;
+    border-radius: 8px;
+    width: 20vw;
+    min-width: 250px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: scale(1.05);
+}
+
+.feature-box i {
+    font-size: 3rem;
+    color: #ff4444;
+}
+
+.feature-box h3 {
+    font-size: 1.5rem;
+    color: #ff4444;
+    margin: 15px 0;
+}
+
+.feature-box p {
+    font-size: 1rem;
+    color: #cbd5e1;
+}
+
+/* Services Section */
 .services-preview {
     background-color: #0f172a;
     padding: 80px 5%;
@@ -404,6 +338,10 @@ header {
     transition: transform 0.3s ease;
 }
 
+.service-card:hover {
+    transform: scale(1.05);
+}
+
 .service-card i {
     font-size: 3rem;
     color: #ff4444;
@@ -418,10 +356,6 @@ header {
 .service-card p {
     font-size: 1rem;
     color: #cbd5e1;
-}
-
-.service-card:hover {
-    transform: scale(1.05);
 }
 
 .btn {
@@ -448,16 +382,56 @@ footer {
     font-size: 0.9rem;
 }
 
-
-
-/* Media Query for Mobile Devices */
-@media (max-width: 480px) {
+/* Media Queries */
+@media (max-width: 768px) {
     .navbar-container {
-        padding: 15px 5%;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .logo-section a {
-        font-size: 1.2rem;
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 10px;
+        background-color: #1e293b;
+        width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        padding: 10px 0;
+        z-index: 1001;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu a {
+        padding: 12px;
+        text-align: center;
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+        font-size: 30px;
+    }
+
+    .logo-section {
+        gap: 8px;
+    }
+
+    .hexagon-logo {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .brand-name {
+        font-size: 1.6rem;
     }
 
     .hero {
@@ -480,33 +454,5 @@ footer {
     .feature-box, .choose-us-box, .service-card {
         width: 90%;
         margin-bottom: 20px;
-    }
-
-    .menu {
-        display: none;
-    }
-
-    .menu.show {
-        display: flex;
-    }
-
-    .menu a {
-        padding: 12px;
-        text-align: center;
-        display: block;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .menu-icon {
-        display: block;
-    }
-
-    .navbar-container {
-        flex-direction: column;
-    }
-
-    .choose-us-box {
-        width: 90%;
-        max-width: 350px;
     }
 }

@@ -1,8 +1,20 @@
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    transition: all 0.25s ease-in-out;
+}
+
 /* Global Styling */
 body {
     font-family: 'Inter', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    padding-top: clamp(4rem, 10vw, 6rem); /* account for fixed nav */
     background-color: #0f172a;
     color: #fff;
     line-height: 1.6;
@@ -18,15 +30,17 @@ body {
 
 /* Navbar Styling */
 header {
-    background-color: #0f172a;
-    padding: 15px 8%;
+    background-color: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: clamp(1rem, 3vw, 1.5rem) 5%;
     display: flex;
     align-items: center;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     animation: slideDown 0.8s ease-in-out;
 }
 
@@ -42,18 +56,19 @@ header {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding-inline: clamp(1rem, 4vw, 2rem);
 }
 
 .logo-section a {
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: clamp(0.5rem, 1.5vw, 1rem);
 }
 
 .hexagon-logo {
-    width: 50px;
-    height: 50px;
+    width: clamp(2.5rem, 6vw, 4rem);
+    height: clamp(2.5rem, 6vw, 4rem);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     display: flex;
     align-items: center;
@@ -61,32 +76,32 @@ header {
 }
 
 .hexagon-logo img {
-    width: 120%;
+    width: 100%;
     object-fit: contain;
 }
 
 .brand-name {
     color: #ff4444;
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 2vw, 1.8rem);
     font-weight: bold;
 }
 
 .menu {
     display: flex;
-    gap: 20px;
+    gap: clamp(1rem, 2vw, 2rem);
 }
 
 .menu a {
     text-decoration: none;
     color: white;
-    font-size: 1rem;
-    padding: 10px 15px;
-    transition: color 0.3s ease-in-out, transform 0.2s;
+    font-size: clamp(1rem, 1.1vw, 1.2rem);
+    padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 1.5vw, 1rem);
     position: relative;
+    transition: color 0.3s ease-in-out, transform 0.2s;
 }
 
 .menu a:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .menu a::after {
@@ -118,9 +133,8 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 120px 20px;
+    padding: clamp(4rem, 20vw, 10rem) 5%;
     background: linear-gradient(180deg, #1e293b, #0f172a);
-    margin-top: 80px;
     animation: slideUp 1s ease-in-out;
 }
 
@@ -130,7 +144,7 @@ header {
 }
 
 .hero h1 {
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 6vw, 3.5rem);
     font-weight: bold;
     color: #ff4444;
     text-shadow: 0 0 15px #ff0000, 0 0 30px #ff2222, 0 0 45px #ff4444;
@@ -146,8 +160,8 @@ header {
 /* About Section */
 .about-section {
     text-align: center;
-    margin-top: 120px;
-    padding: 40px;
+    margin-top: clamp(3rem, 8vw, 6rem);
+    padding: clamp(2rem, 5vw, 4rem);
     animation: fadeIn 1.5s ease-in-out;
 }
 
@@ -157,7 +171,7 @@ header {
 }
 
 .about-section h1 {
-    font-size: 2.8rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: bold;
     color: #ff4444;
     text-shadow: 0 0 15px #ff0000, 0 0 30px #ff2222, 0 0 45px #ff4444;
@@ -165,11 +179,11 @@ header {
 }
 
 .about-table {
-    width: 60%;
-    margin: 0 auto;
+    width: min(90%, 800px);
+    margin: 2rem auto;
     border: 2px solid #ff4444;
     border-radius: 10px;
-    padding: 20px;
+    padding: clamp(1rem, 3vw, 2rem);
     background-color: rgba(255, 68, 68, 0.1);
     transition: box-shadow 0.3s ease-in-out;
 }
@@ -179,8 +193,8 @@ header {
 }
 
 .about-table td {
-    padding: 20px;
-    font-size: 1.2rem;
+    padding: 1.5rem;
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
     text-align: justify;
     color: #cbd5e1;
 }
@@ -188,7 +202,7 @@ header {
 /* Footer */
 footer {
     text-align: center;
-    padding: 40px;
+    padding: 2.5rem;
     background-color: #0f172a;
     color: white;
     font-size: 0.9rem;
@@ -200,7 +214,7 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Media Queries for Responsiveness */
+/* Media Queries */
 @media screen and (max-width: 768px) {
     .navbar-container {
         flex-direction: column;
@@ -210,23 +224,33 @@ footer {
     .menu {
         display: none;
         flex-direction: column;
-        gap: 10px;
-    }
-
-    .menu-icon {
-        display: block;
+        gap: 0.5rem;
+        background-color: #1e293b;
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        width: clamp(180px, 50vw, 240px);
+        border-radius: 0.5rem;
+        padding: 0.5rem 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
     .menu.show {
         display: flex;
     }
 
-    .hero {
-        padding: 100px 20px;
+    .menu a {
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-icon {
+        display: block;
     }
 
     .about-table {
-        width: 90%;
+        width: 95%;
     }
 }
 
@@ -235,7 +259,7 @@ footer {
         font-size: 2rem;
     }
 
-    .about-table {
-        width: 95%;
+    .about-table td {
+        font-size: 1rem;
     }
 }
